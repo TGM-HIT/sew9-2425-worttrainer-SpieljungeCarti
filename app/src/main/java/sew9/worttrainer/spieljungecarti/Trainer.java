@@ -2,7 +2,6 @@ package sew9.worttrainer.spieljungecarti;
 
 import java.util.List;
 import java.util.Random;
-
 public class Trainer {
 
     private List<Pic> list;
@@ -16,17 +15,19 @@ public class Trainer {
         this.random = new Random();
     }
 
-    public void select() {
-        if (list != null && !list.isEmpty()) {
-            int index = random.nextInt(list.size());
-            current = list.get(index);
+    public void select() throws IllegalArgumentException{
+        if (list == null || list.isEmpty()) {
+            throw new IllegalArgumentException("List is empty");
         }
+        int index = random.nextInt(list.size());
+        current = list.get(index);
     }
 
-    public void select(int index) {
-        if (list != null && !list.isEmpty() && index >= 0 && index < list.size()) {
-            current = list.get(index);
+    public void select(int index) throws IllegalArgumentException {
+        if ( index > list.size() || list == null || list.isEmpty()) {
+            throw new IllegalArgumentException("Index out of bounds");
         }
+        current = list.get(index);
     }
 
     public boolean check(String answer) {
