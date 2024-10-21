@@ -10,10 +10,8 @@ public class test {
     // Testet ob die Methode viable() in Pic richtig funktioniert
     @Test
     public void trainerViable() {
-        Pic pic = new Pic("https://www.google.com", "google");
-        Pic pic2 = new Pic("https://www.google.com.jpg", "google");
-        assert(pic.viable() == false);
-        assert(pic2.viable() == true);
+        assertThrows(IllegalArgumentException.class, () -> new Pic(null,null));
+        assertThrows(IllegalArgumentException.class, () -> new Pic("https://www.google.com", "google"));
     }
 
     // Der Test schlägt fehl, da die der Liste keinen Inhalt hat
@@ -28,7 +26,7 @@ public class test {
     @Test 
     public void trainerSelectIndexErr() throws IllegalArgumentException {
         List l = new ArrayList<Pic>();
-        l.add(new Pic("https://www.google.com", "google"));
+        l.add(new Pic("https://www.google.com.png", "google"));
         Trainer t = new Trainer(l);
         assertThrows(IllegalArgumentException.class, () -> t.select(2));
     }
@@ -37,7 +35,7 @@ public class test {
     @Test
     public void trainerCheck() {
         List l = new ArrayList<Pic>();
-        l.add(new Pic("https://www.google.com", "google"));
+        l.add(new Pic("https://www.google.com.png", "google"));
         Trainer t = new Trainer(l);
         t.select(0);
         assert(t.check("google") == true);
@@ -48,7 +46,7 @@ public class test {
     @Test
     public void trainerStats() {
         List l = new ArrayList<Pic>();
-        l.add(new Pic("https://www.google.com", "google"));
+        l.add(new Pic("https://www.google.com.png", "google"));
         Trainer t = new Trainer(l);
         t.select(0);
         t.check("google");
