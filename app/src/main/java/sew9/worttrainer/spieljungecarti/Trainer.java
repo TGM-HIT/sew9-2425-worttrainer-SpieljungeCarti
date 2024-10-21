@@ -6,21 +6,21 @@ public class Trainer {
 
     private List<Pic> list;
     private Pic current;
-    private Random random;
     private int right;
     private int amount;
 
     public Trainer(List<Pic> list) {
         this.list = list;
-        this.random = new Random();
+        this.right = 0;
+        this.amount = 0;
     }
 
     public void select() throws IllegalArgumentException{
+        Random random = new Random();
         if (list == null || list.isEmpty()) {
             throw new IllegalArgumentException("List is empty");
         }
-        int index = random.nextInt(list.size());
-        current = list.get(index);
+        current = list.get(random.nextInt(list.size()));
     }
 
     public void select(int index) throws IllegalArgumentException {
@@ -41,5 +41,9 @@ public class Trainer {
 
     public String stats() {
         return (right+ "/" +amount);
+    }
+
+    public List<Pic> getList() {
+        return list;
     }
 }
