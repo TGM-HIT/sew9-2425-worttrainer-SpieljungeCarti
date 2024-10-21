@@ -46,4 +46,12 @@ public class Trainer {
     public List<Pic> getList() {
         return list;
     }
+
+    public void setRight(int right) {
+        this.right = right;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
 }
