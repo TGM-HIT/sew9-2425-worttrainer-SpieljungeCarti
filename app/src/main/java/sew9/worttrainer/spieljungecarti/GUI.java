@@ -42,7 +42,7 @@ public class GUI {
         saveTrainer(trainer);
     }
 
-    private static Trainer loadTrainer() {
+    public static Trainer loadTrainer() {
         try {
             SaLo s = new SaLo();
             return s.load("trainer_data.txt");
@@ -54,7 +54,7 @@ public class GUI {
         }
     }
 
-    private static void saveTrainer(Trainer trainer) {
+    public static void saveTrainer(Trainer trainer) {
         try {
             SaLo s = new SaLo();
             s.save("trainer_data.txt", trainer);
