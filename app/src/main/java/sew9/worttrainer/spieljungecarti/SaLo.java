@@ -10,6 +10,7 @@ import java.util.List;
 
 public class SaLo implements SavePattern {
     
+    @Override
     public void save(String fileName, Trainer trainer) throws IOException{
         try(BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
             for (Pic pic : trainer.getList()) {
@@ -20,6 +21,7 @@ public class SaLo implements SavePattern {
         }
     }
 
+    @Override
     public Trainer load(String fileName) throws IOException{
 
         int right = 0;
