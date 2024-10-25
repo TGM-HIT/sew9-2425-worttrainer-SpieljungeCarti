@@ -32,7 +32,7 @@ public class Trainer {
 
     public boolean check(String answer) {
         amount++;
-        if (current.getName().toLowerCase() == answer.toLowerCase()) {
+        if (current.getName().toLowerCase() == null ? answer.toLowerCase() == null : current.getName().toLowerCase().equals(answer.toLowerCase())) {
             right++;
             return true;
         }
@@ -53,5 +53,9 @@ public class Trainer {
 
     public void setAmount(int amount) {
         this.amount = amount;
+    }
+
+    public Pic getCurrent() {
+        return current;
     }
 }
