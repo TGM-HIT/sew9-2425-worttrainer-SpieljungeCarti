@@ -12,11 +12,6 @@ public class Pic {
         if (!url.matches("https?://.*")) {
             throw new IllegalArgumentException("url must start with http:// or https://");
         }
-        if (!url.endsWith(".jpg")) {
-            if (!url.endsWith(".png")) {
-                throw new IllegalArgumentException("url must end with .jpg or .png");
-            }
-        }
         this.url = url;
         this.name = name;
     }
