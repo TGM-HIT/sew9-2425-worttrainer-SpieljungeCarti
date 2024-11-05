@@ -1,5 +1,11 @@
 package sew9.worttrainer.spieljungecarti;
 
+/**
+ * Diese Klasse verwaltet eine Liste von Pic-Objekten und hält den aktuellen Stand der Trainingseinheit. 
+ * Sie bietet Methoden zum Auswählen eines zufälligen Bildes, Überprüfen der Benutzereingabe und Abrufen
+ * der Statistik.
+ */
+
 import java.util.List;
 import java.util.Random;
 public class Trainer {
@@ -31,12 +37,17 @@ public class Trainer {
     }
 
     public boolean check(String answer) {
-        amount++;
-        if (current.getName().toLowerCase() == null ? answer.toLowerCase() == null : current.getName().toLowerCase().equals(answer.toLowerCase())) {
-            right++;
-            return true;
+        if (answer == null) {
+            throw new NullPointerException();
         }
-        return false;
+        else {
+            amount++;
+            if (current.getName().toLowerCase().equals(answer.toLowerCase())) {
+                right++;
+                return true;
+            }   
+            return false;
+        }
     }
 
     public String stats() {

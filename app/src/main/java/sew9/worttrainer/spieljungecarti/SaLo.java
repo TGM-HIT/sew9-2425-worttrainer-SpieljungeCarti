@@ -8,6 +8,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Diese Klasse implementiert das SavePattern-Interface und bietet die konkrete Implementierung 
+ * zum Speichern und Laden der Trainingsdaten in bzw. aus einer Datei. Die Daten werden in einem 
+ * einfachen Textformat gespeichert, wobei jedes Bild als eine Zeile mit Name und URL gespeichert 
+ * wird und die Statistik am Ende der Datei hinzugefügt wird.
+ */
+
 public class SaLo implements SavePattern {
     
     @Override

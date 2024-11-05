@@ -1,5 +1,10 @@
 package sew9.worttrainer.spieljungecarti;
 
+/**
+ * Diese Klasse repräsentiert ein Bild mit einer URL und einem Namen. 
+ * Sie stellt Methoden bereit, um die URL und den Namen abzurufen.
+ */
+
 public class Pic {
 
     private String url;
